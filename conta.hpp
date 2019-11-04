@@ -17,21 +17,27 @@ class conta{
     public:
         conta();
         //metodos set
+        void setId(int);
         void setData();
         void setSaldo();
-        void setFatura();
+        void setFatura(bool);
         void setGastoCredito(float);
         void setGastoDebito(float);
         void setLancamento();
         //metodos get
+        int getId();
         Data getData();
         float getSaldo();
         float getFatura();
-        //data managin
+        //data
         Data validaData(int, int, int);
         void imprimeData();
+        //conta
+        void novaConta(int );
+        void imprimeConta();
 
     private:
+        int id;
         Data datum;
         float saldo, fatura;
 };
