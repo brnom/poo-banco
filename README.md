@@ -6,5 +6,5 @@ pra compilar e rodar até agora (linux):
 
 ## To do
 
-precisa fazer toda parte de verificação por cpf (único);
+precisa fazer toda parte de verificação por cpf (único);  
 fazer "data.hpp" ficar operacional pra usá-lo em outras classes.
