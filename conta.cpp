@@ -1,7 +1,5 @@
 //versão 2.0
-#include "data.hpp"
 #include "conta.hpp"
-
 
 conta::conta(){
     saldo=0;
@@ -13,10 +11,7 @@ void conta::setData(){
     cout << "digite data (dd mm aaaa): ";
     int d, m, a;
     cin >> d >> m >> a;
-    //verificaData(d, m, a, datum); //ta dando algum erro sla pq
-    datum.dia=d;
-    datum.mes=m;
-    datum.ano=a;
+    datum = this->validaData(d, m, a);
 };
 void conta::setSaldo(){
     float s;
@@ -61,6 +56,34 @@ void conta::setLancamento(){
         setGastoDebito(valor);
     else
         cout<<"opcao invalida.."<<endl;
+};
+Data conta::validaData(int d, int m, int a){
+	Data aux;
+	//verifica se eh uma data valida
+	int limDia = 31;
+	bool bissexto = false;
+	if (a%100!=0 && a%4==0)
+		bissexto = true;
+	if(m==4 || m==6 || m==9 || m==11)
+		limDia = 30;
+	else if (m==2){
+		if (bissexto)
+			limDia=29;
+		else
+			limDia=28;
+	}
+	if (d > limDia)
+		d = limDia;
+	//guarda a data no struct
+	aux.dia = d;
+	aux.mes = m;
+	aux.ano = a;	
+	return aux;
+};
+void conta::imprimeData(){
+    Data aux;
+    aux = this->getData();
+    cout << "DATA: " << aux.dia << "/" << aux.mes << "/"<< aux.ano <<endl;
 };
 
 

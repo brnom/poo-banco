@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include "data.hpp"
 #include "conta.hpp"
 #include "cliente.hpp"
 
@@ -24,8 +23,7 @@ int main(){
     cout << "- TESTE ARQUIVO DATA" << endl;
     conta A;
     A.setData();  
-    Data temp = A.getData();
-    cout << "dia." << temp.dia << "; mes." << temp.mes << "; ano." << temp.ano << endl;
+    A.imprimeData();
 
 
     cout << "- TESTE CLASSE CLIENTE" << endl;

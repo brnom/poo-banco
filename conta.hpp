@@ -3,9 +3,15 @@
 
 #include<iostream>
 #include <string>
-#include "data.hpp"
 using namespace std;
 
+
+struct data {
+	int dia=0, 
+		mes=0,
+		ano=0;
+};
+typedef struct data Data;
 
 class conta{
     public:
@@ -21,6 +27,9 @@ class conta{
         Data getData();
         float getSaldo();
         float getFatura();
+        //data managin
+        Data validaData(int, int, int);
+        void imprimeData();
 
     private:
         Data datum;
